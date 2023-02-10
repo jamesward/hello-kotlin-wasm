@@ -6,5 +6,11 @@ import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
 fun main() {
-    document.body?.appendText("asdf")
+    val time = measureTime {
+        repeat(10) {
+            fib(40)
+        }
+    }
+
+    document.body?.appendText("took: $time")
 }

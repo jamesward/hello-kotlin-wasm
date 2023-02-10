@@ -9,11 +9,31 @@ repositories {
 kotlin {
     js(IR) {
         binaries.executable()
-        browser()
+        browser {
+            commonWebpackConfig {
+                devServer = (devServer ?: org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer()).copy(
+                    open = mapOf(
+                        "app" to mapOf(
+                            "name" to "xdg-open"
+                        )
+                    )
+                )
+            }
+        }
     }
     wasm {
         binaries.executable()
-        browser()
+        browser {
+            commonWebpackConfig {
+                devServer = (devServer ?: org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer()).copy(
+                    open = mapOf(
+                        "app" to mapOf(
+                            "name" to "xdg-open"
+                        )
+                    )
+                )
+            }
+        }
     }
     sourceSets {
         val commonMain by getting
