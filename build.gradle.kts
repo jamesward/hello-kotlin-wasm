@@ -7,42 +7,9 @@ repositories {
 }
 
 kotlin {
-    js(IR) {
-        binaries.executable()
-        browser {
-            commonWebpackConfig {
-                devServer = (devServer ?: org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer()).copy(
-                    open = mapOf(
-                        "app" to mapOf(
-                            "name" to "xdg-open"
-                        )
-                    )
-                )
-            }
-        }
-    }
+    @Suppress("OPT_IN_USAGE")
     wasm {
         binaries.executable()
-        browser {
-            commonWebpackConfig {
-                devServer = (devServer ?: org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer()).copy(
-                    open = mapOf(
-                        "app" to mapOf(
-                            "name" to "xdg-open"
-                        )
-                    )
-                )
-            }
-        }
-    }
-    sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
-        }
-        val wasmMain by getting
-        val wasmTest by getting
+        browser()
     }
 }
