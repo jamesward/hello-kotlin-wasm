@@ -2,5 +2,5 @@ Hello Kotlin Wasm
 -----------------
 
 ```
-./gradlew wasmBrowserRun -t
+./gradlew :app:wasmNodeRun
 ```

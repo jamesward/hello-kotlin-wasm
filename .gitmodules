@@ -1,0 +1,3 @@
+[submodule "kowasm"]
+	path = kowasm
+	url = https://github.com/kowasm/kowasm.git
