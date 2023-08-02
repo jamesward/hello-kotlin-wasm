@@ -32,4 +32,7 @@ tasks.withType<NodeJsExec> {
     nodeArgs = mutableListOf("--experimental-wasm-gc")
     sourceMapStackTraces = false
     inputFileProperty.set(rootProject.buildDir.resolve("js/packages/hello-kotlin-wasm-app-wasm/kotlin/runner.mjs"))
+    doFirst {
+        rootProject.buildDir.resolve("js/packages/hello-kotlin-wasm-app-wasm/testDir").delete()
+    }
 }
