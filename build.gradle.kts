@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.8.22" apply false
-    id("org.jetbrains.dokka") version "1.8.20" apply false
+    id("org.jetbrains.dokka") version "1.8.20" apply false // for kowasm
 }
 
 allprojects {
