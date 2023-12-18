@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.10"
+    kotlin("multiplatform") version "1.9.21"
 }
 
 repositories {
@@ -8,7 +8,7 @@ repositories {
 
 kotlin {
     @Suppress("OPT_IN_USAGE")
-    wasm {
+    wasmJs {
         binaries.executable()
         browser()
         applyBinaryen()
